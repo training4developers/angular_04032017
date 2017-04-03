@@ -1,5 +1,6 @@
 import 'angular';
 
+import 'bootstrap-loader';
 import '../css/styles.scss';
 
 angular.module('MyApp', [])
