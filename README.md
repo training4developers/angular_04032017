@@ -1,4 +1,4 @@
-# Welcome to React!
+# Welcome to Advanced AngularJS!
 
 ## Instructor
 
@@ -8,32 +8,32 @@ Eric Greene - [http://t4d.io](http://t4d.io) - [LinkedIn](https://www.linkedin.c
 
 Class:
 
-- Tuesday - Wednesday: 9am to 5pm PST
+- Monday - Wednesday: 8:30am to 4:30pm EDT
 
 Breaks:
 
-- Morning: 10:25am to 10:35am
+- Morning #1: 9:35am to 9:45am
+- Morning #2: 10:50am to 11:00am
 - Lunch: Noon to 1pm
-- Afternoon #1: 2:15pm to 2:25pm
-- Afternoon #2: 3:40pm to 3:50pm
+- Afternoon #1: 2:05pm to 2:15pm
+- Afternoon #2: 3:20pm to 3:30pm
 
 ## Course Outline
 
-JavaScript topics will be included as needed into the React & Redux content
+JavaScript topics will be included as needed into the AngularJS & Redux content
 
-- Day 1 - Overview of React, JSX, Props + Validation, State, Component Composition
-- Day 2 - Forms, Special Attributes, Pure Component, Stateless Functions, Life Cycle Functions
+- Day 1 - Assessment, Site Configuration, Redux
+- Day 2 - Redux Thunk, Components
+- Day 3 - AngularJS to Angular Migration, Unit Testing
 
 ## Links
 
 ### Instructor's Resources
 
-- [DevelopIntelligence](http://www.developintelligence.com/)
+- [Accelebrate](http://www.accelebrate.com/)
 - [Eric's Blog](http://t4d.io/)
 - [WintellectNOW](https://www.wintellectnow.com/Home/Instructor?instructorId=EricGreene) - Special Offer Code: GREENE-2016
 - [Microsoft Virtual Academy](https://mva.microsoft.com/search/SearchResults.aspx#!q=Eric%20Greene&lang=1033)
-- [React Blog Posts](https://github.com/training4developers/react-flux-blog)
-- [React SitePoint](http://www.sitepoint.com/author/ericgreene/)
 
 ### Other Resources
 
@@ -46,7 +46,7 @@ JavaScript topics will be included as needed into the React & Redux content
 
 ## Overview
 
-This project configuration bundles JavaScript files with Webpack transpiling ES2017 and JSX code to run in an ES5.1 environment.
+This project configuration bundles JavaScript files with Webpack transpiling ES2017 code to run in an ES5.1 environment.
 
 ## Application Setup
 
@@ -69,28 +69,22 @@ It could take a few minutes for this command to complete. If you have connection
 This setup has been completed successfully when you receive a message similar to this one:
 
 ```bash
-[0] Hash: 22b8756ee9084e76420f
-[0] Version: webpack 1.14.0
-[0] Time: 3731ms
-[0]                     Asset       Size  Chunks             Chunk Names
-[0]                    app.js     906 kB       0  [emitted]  app
-[0]                app.js.map    1.08 MB       0  [emitted]  app
-[0] ../images/placeholder.txt   20 bytes          [emitted]
-[0]             ../index.html  300 bytes          [emitted]
-[0]     + 186 hidden modules
-[1] [BS] File changed: dist/js/app.js
-[1] [BS] File changed: dist/images/placeholder.txt
-[1] [BS] File changed: dist/js/app.js.map
-[1] [BS] File changed: dist/index.html
+[0] Child html-webpack-plugin for "index.html":
+[0]     chunk    {0} index.html 541 kB [entry] [rendered]
+[0]         [0] ./~/lodash/lodash.js 540 kB {0} [built]
+[0]         [1] ./~/html-webpack-plugin/lib/loader.js!./src/index.html 649 bytes {0} [built]
+[0]         [2] (webpack)/buildin/global.js 509 bytes {0} [built]
+[0]         [3] (webpack)/buildin/module.js 517 bytes {0} [built]
+[0] webpack: Compiled successfully.
 ```
 
 This terminal window is now running the web server, a second terminal window will need to be opened to run additional terminal commands.
 
-Step 5. If a web browser did not open automatically for you, then open a web browser, and navigate to [http://localhost:5000](http://localhost:5000).  The React web application should load and be usable.
+Step 5. If a web browser did not open automatically for you, then open a web browser, and navigate to [http://localhost:3000](http://localhost:3000).  The AngularJS web application should load and be usable.
 
 ### To Modify the Web Application
 
-Step 6. Open your favorite text editor (such as [Atom](https://atom.io/) or [Visual Studio Code (preferred)](https://code.visualstudio.com)), and modify the files in the **src** folder. When file changes are saved, **webpack** will automatically transpile and bundle the application code and assets, and deploy it to the **dist** folder. To see the changes, reload your web browser.
+Step 6. Open your favorite text editor (such as [[Visual Studio Code](https://code.visualstudio.com)), and modify the files in the **src** folder. When file changes are saved, **webpack** will automatically transpile and bundle the application code and assets. The web browser should reload automatically with the changes.
 
 #### Recommended Editor Packages/Extensions
 
@@ -98,35 +92,27 @@ For Visual Studio Code:
 
 - HTMLHint (kaufman.HTMLHint)
 - ESLint (dbaeumer.vscode-eslint)
-
-Visual Studio Code has built-in support for React and a Terminal, no package needs to be installed
-
-For Atom:
-
-- PlatformIO IDE Terminal (platformio-ide-terminal)
-- Linter (linter)
-- Linter-ESLint (linter-eslint)
-- Linter-HTMLHint (linter-htmlhint)
-- React (react)
+- SASS Lint (glen-84.sass-lint)
 
 ## NPM Scripts Command Reference
 
 From a terminal, in the root project folder (where the **package.json** file exists), the following commands can be executed to perform various project development tasks.
 
-- **npm start** - removes the dist folder, builds and deploys the web app, and starts the web app and the rest app
+- **npm start** - builds the web app, and starts the web app and the rest app
+- **npm test** - run unit tests
 - **npm run clean** - removes the **dist** folder
 - **npm run webpack:w** - runs webpack in watch mode so web app file changes are automatically processed, and deployed to the **dist** folder
 - **npm run webpack** - runs webpack once to process web app files, and deploys them to the **dist** folder
-- **npm run web** - starts the web server
-- **npm run rest** - starts the rest server
+- **npm run web** - starts the webpack development web server
+- **npm run rest** - starts the JSON REST server
+- **npm run tdd** - starts the application in test-driven development mode
 
 ## Useful Resources
 
+- [AngularJS](https://angularjs.org/)
 - [React](https://facebook.github.io/react/)
 - [Redux](https://github.com/reactjs/redux)
-- [React-Redux](https://github.com/reactjs/react-redux)
 - [Redux-Thunk](https://github.com/gaearon/redux-thunk)
-- [React Router](https://github.com/ReactTraining/react-router)
 - [Babel](https://babeljs.io/)
 - [Webpack](https://webpack.github.io/)
 - [SASS](http://sass-lang.com/)

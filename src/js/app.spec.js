@@ -4,12 +4,12 @@ import './app';
 
 describe('tests', () => {
 
-    it('some test true', () => {
+    it('some test pass', () => {
         expect(true).toBe(true);
     });
 
-    it('some test false', () => {
-        expect(true).toBe(true);
+    it('some test fail', () => {
+        expect(true).toBe(false);
     });
 
 });
