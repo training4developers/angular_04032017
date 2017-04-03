@@ -1,52 +1,54 @@
 import 'angular';
+import { createStore, bindActionCreators } from 'redux';
 
 import 'bootstrap-loader';
 import '../css/styles.scss';
 
-// my code has a bug, where is it?
 angular.module('MyApp', [])
-    .controller('calculatorCtrl', function() {
+    .constant('actionTypes', {
+        ADD: 'ADD',
+        SUBTRACT: 'SUBTRACT',
+    })
+    .service('appStore', ['actionTypes', function(actionTypes) {
+
+        const reducer = (state = 0, action) => {
+            console.log('state', state, 'action', action);
+            switch (action.type) {
+                case actionTypes.ADD:
+                    return state + action.value;
+                case actionTypes.SUBTRACT:
+                    return state - action.value;
+                default:
+                    return state;
+            }
+        };
+
+        return createStore(reducer);
+    }])
+    .factory('actions', ['actionTypes', 'appStore', function(actionTypes, appStore) {
+        const add = value => ({ type: actionTypes.ADD, value });
+        const subtract = value => ({ type: actionTypes.SUBTRACT, value });
+        return bindActionCreators({ add, subtract }, appStore.dispatch);
+    }])
+    .controller('calculatorCtrl', ['appStore', '$scope', 'actions', function(appStore, $scope, actions) {
 
         this.inputValue = 0;
         this.results = 0;
 
+        const appStoreUnsubscribe = appStore.subscribe(() => {
+            this.results = appStore.getState();
+        });
+
+        $scope.$on('$destroy', () => {
+            appStoreUnsubscribe();
+        });
+
         this.add = () => {
-            this.results += Number(this.inputValue);
+            actions.add(Number(this.inputValue));
         };
 
         this.subtract = function() {
-            this.results -= Number(this.inputValue);
+            actions.subtract(Number(this.inputValue));
         };
 
-    });
-
-// example code
-
-import { createStore } from 'redux';
-
-const reducer = (state = 0, action) => {
-    console.log('state', state, 'action', action);
-    switch (action.type) {
-        case 'ADD':
-            return state + action.value;
-        case 'SUBTRACT':
-            return state - action.value;
-        default:
-            return state;
-    }
-};
-
-const store = createStore(reducer);
-
-store.subscribe(() => {
-    console.log(store.getState());
-});
-
-store.dispatch({ type:'ADD', value: 1 });
-store.dispatch({ type:'SUBTRACT', value: 2 });
-store.dispatch({ type:'ADD', value: 3 });
-store.dispatch({ type:'SUBTRACT', value:4 });
-store.dispatch({ type:'ADD', value:5 });
-
-
-
+    }]);
