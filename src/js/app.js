@@ -1,5 +1,7 @@
 import 'angular';
 
+import '../css/styles.scss';
+
 angular.module('MyApp', [])
     .component('main', {
         template: `
