@@ -7,6 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <main ng-app="MyApp">Loading...</main>
+    <main ng-app="MyApp">
+
+        <div ng-controller="calculatorCtrl as calc">
+
+            <div>
+                <span>Input Value:</span>
+                <input type="text" ng-model="calc.inputValue">
+            </div>
+            <div>
+                <span>Result: {{calc.results}}</span>
+            </div>
+            <button ng-click="calc.add()">Add</button>
+            <button ng-click="calc.subtract()">Subtract</button>
+        </div>
+
+    </main>
   </body>
 </html>
