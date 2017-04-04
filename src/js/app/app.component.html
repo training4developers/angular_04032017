@@ -1,10 +1,4 @@
 <h1>{{$ctrl.header}}</h1>
 <item-list items="$ctrl.colors"></item-list>
 <item-list items="$ctrl.hotels"></item-list>
-<form novalidate>
-    <div>
-        <label for="new-color-input">New Color</label>
-        <input type="text" id="new-color-input" ng-model="$ctrl.newColor">
-    </div>
-    <button ng-click="$ctrl.addColor()">Add Color</button>
-</form>
+<color-form on-new-color="$ctrl.addColor(color)"></color-form>

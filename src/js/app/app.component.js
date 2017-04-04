@@ -9,10 +9,9 @@ class AppComponent {
         'Holiday Inn Resorts',
         'Holiday Inn Club Vacations',
     ];
-    newColor = '';
 
-    addColor() {
-        this.colors = this.colors.concat(this.newColor);
+    addColor(color) {
+        this.colors = this.colors.concat(color);
     }
 }
 
