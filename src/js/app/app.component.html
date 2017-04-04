@@ -1,7 +1,6 @@
 <h1>{{$ctrl.header}}</h1>
-<ul>
-    <li ng-repeat="color in $ctrl.sortedColors">{{color}}</li>
-</ul>
+<item-list items="$ctrl.colors"></item-list>
+<item-list items="$ctrl.hotels"></item-list>
 <form novalidate>
     <div>
         <label for="new-color-input">New Color</label>

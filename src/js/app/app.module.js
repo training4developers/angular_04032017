@@ -1,11 +1,7 @@
 
 import { appComponent } from './app.component';
+import { itemList } from './components/item-list.component';
 
 export const appModule = angular.module('App', [])
-    .filter('demo', function() {
-        return function(value) {
-            console.log('demo ran');
-            return value;
-        };
-    })
-    .component(...appComponent);
+    .component(...appComponent)
+    .component(...itemList);
