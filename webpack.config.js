@@ -25,7 +25,7 @@ module.exports = {
 
     // entry points for the three bundles, order does not matter
     entry: {
-        'app': ['babel-polyfill', 'whatwg-fetch', './app.js'],
+        'app': ['babel-polyfill', 'whatwg-fetch', './main.js'],
     },
 
     // allows us to require modules using
@@ -47,13 +47,24 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: [/node_modules/, /\.(spec|e2e)\.js$/],
-                use: [{
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['latest'],
-                    }
-                }],
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['latest'],
+                            plugins: ['transform-class-properties'],
+                        }
+                    },
+                    'angular-template-url-loader',
+                ],
             },
+            // processes HTML files into JavaScript files
+            // useful for bundling HTML with Angular Component
+            {
+                test: /\.html$/,
+                exclude: [ path.join(srcFolderPath, 'index.html') ],
+                use: 'raw-loader',
+            },            
             // transpiles global SASS stylesheets
             // loader order is executed right to left
             {
