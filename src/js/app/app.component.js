@@ -1,18 +1,7 @@
 
 class AppComponent {
-
-    header = 'Color Tool';
-    colors = ['red','blue','yellow'];
-    hotels = [
-        'Holiday Inn',
-        'Holiday Inn Express',
-        'Holiday Inn Resorts',
-        'Holiday Inn Club Vacations',
-    ];
-
-    addColor(color) {
-        this.colors = this.colors.concat(color);
-    }
+    header = 'Color Tool!';
+    footer = 'Copyright 2017'
 }
 
 export const appComponent = [ 'main', {

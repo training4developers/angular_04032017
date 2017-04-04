@@ -1,4 +1,8 @@
-<h1>{{$ctrl.header}}</h1>
-<item-list items="$ctrl.colors"></item-list>
-<item-list items="$ctrl.hotels"></item-list>
-<color-form on-new-color="$ctrl.addColor(color)"></color-form>
+<color-tool>
+    <header>
+        <h3>{{$ctrl.header}}</h3>
+    </header>
+    <footer>
+        <small>{{$ctrl.footer}}</small>
+    </footer>
+</color-tool>

@@ -1,0 +1,4 @@
+<ng-transclude ng-transclude-slot="header"></ng-transclude>
+<item-list items="$ctrl.colors"></item-list>
+<color-form on-new-color="$ctrl.addColor(color)"></color-form>
+<ng-transclude ng-transclude-slot="footer"></ng-transclude>
