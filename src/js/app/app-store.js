@@ -1,5 +1,8 @@
-import { createStore } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 
-import { colorReducer } from './reducers/color-reducer';
+import { colors, cars } from './reducers/app-reducer';
 
-export const appStore = createStore(colorReducer);
+export const appStore = createStore(combineReducers({
+    colors, cars
+}), applyMiddleware(thunk));

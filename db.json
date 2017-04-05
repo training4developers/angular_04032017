@@ -1,4 +1,18 @@
 {
+  "colors": [
+    {
+        "id": 1,
+        "name": "blue"
+    },
+    {
+        "id": 2,
+        "name": "yellow"
+    },
+    {
+        "id": 3,
+        "name": "red"
+    }
+  ],
   "cars": [
     {
       "id": 1,
