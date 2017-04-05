@@ -19,10 +19,6 @@ class ColorTool {
     }
 
     colors = [];
-
-    // addColor(color) {
-    //     this.actions.addColor(color);
-    // }
 }
 
 ColorTool.$inject = [ 'appStore', 'actions', '$scope' ];
@@ -31,7 +27,6 @@ export const colorTool = [ 'colorTool', {
     templateUrl: 'app/components/color-tool.component.html',
     controller: ColorTool,
     transclude: {
-        // slot name: slot selector
         header: 'header',
         footer: 'footer'
     },
