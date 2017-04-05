@@ -3,7 +3,13 @@ class ColorForm {
 
     newColor = '';
 
+    formValues = {
+        newColor: '',
+    };
+
     addColor() {
+        this.newColor = this.formValues.newColor;
+
         this.onNewColor({ color: this.newColor });
     }
 }
