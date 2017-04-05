@@ -34,8 +34,9 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         presets: ['latest'],
+                        plugins: ['transform-class-properties'],
                     }
-                }],
+                }, 'angular-template-url-loader' ],
             },
             // package HTML as JavaScript modules
             {
